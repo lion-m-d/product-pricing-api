@@ -1,0 +1,14 @@
+### Test 1
+GET http://localhost:8080/prices?applicationDate=2020-06-14T10:00:00.000&productId=35455&brandId=1
+
+### Test 2
+GET http://localhost:8080/prices?applicationDate=2020-06-14T16:00:00.000&productId=35455&brandId=1
+
+### Test 3
+GET http://localhost:8080/prices?applicationDate=2020-06-14T21:00:00.000&productId=35455&brandId=1
+
+### Test 4
+GET http://localhost:8080/prices?applicationDate=2020-06-15T10:00:00.000&productId=35455&brandId=1
+
+### Test 5
+GET http://localhost:8080/prices?applicationDate=2020-06-16T21:00:00.000&productId=35455&brandId=1

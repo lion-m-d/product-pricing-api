@@ -1,0 +1,859 @@
+2020-05-12 09:17:59,030 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.2.Final
+2020-05-12 09:17:59,079 INFO o.s.b.StartupInfoLogger [main] Starting AppRunTests using Java 21.0.6 with PID 52685 (started by robertmallquidiaz in /Users/robertmallquidiaz/Documents/Tools/postulaciones/product-pricing-api/infrastructure)
+2020-05-12 09:17:59,079 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2020-05-12 09:17:59,928 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-12 09:17:59,979 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 43 ms. Found 1 JPA repository interface.
+2020-05-12 09:18:00,475 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-12 09:18:00,518 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.6.11.Final
+2020-05-12 09:18:00,544 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2020-05-12 09:18:00,755 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2020-05-12 09:18:00,782 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2020-05-12 09:18:01,002 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2020-05-12 09:18:01,004 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-05-12 09:18:01,064 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator [main] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2020-05-12 09:18:01,792 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2020-05-12 09:18:01,839 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-12 09:18:02,086 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2020-05-12 09:18:02,855 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-12 09:18:03,549 INFO o.s.b.a.h.H2ConsoleAutoConfiguration$H2ConsoleLogger [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2020-05-12 09:18:03,612 INFO o.s.m.w.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2020-05-12 09:18:03,612 INFO o.s.w.s.FrameworkServlet [main] Initializing Servlet ''
+2020-05-12 09:18:03,618 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 14 endpoints beneath base path '/actuator'
+2020-05-12 09:18:03,633 INFO o.s.w.s.FrameworkServlet [main] Completed initialization in 21 ms
+2020-05-12 09:18:03,686 INFO o.s.b.StartupInfoLogger [main] Started AppRunTests in 5.391 seconds (process running for 6.338)
+2020-05-12 09:18:04,124 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T10:00:00.000&productId=35455
+2020-05-12 09:18:04,145 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 BAD_REQUEST : The required query parameter 'brandId' is missing.
+2020-05-12 09:18:04,227 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T10:00:00.000&productId=35455&brandId=1
+2020-05-12 09:18:04,375 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 1
+    startDate: 2020-06-14T00:00
+    endDate: 2020-12-31T23:59:59
+    price: 35.50
+}
+2020-05-12 09:18:04,413 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T16:00:00.000&productId=35455&brandId=1
+2020-05-12 09:18:04,416 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 2
+    startDate: 2020-06-14T15:00
+    endDate: 2020-06-14T18:30
+    price: 25.45
+}
+2020-05-12 09:18:04,425 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T21:00:00.000&productId=35455&brandId=1
+2020-05-12 09:18:04,428 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 1
+    startDate: 2020-06-14T00:00
+    endDate: 2020-12-31T23:59:59
+    price: 35.50
+}
+2020-05-12 09:18:04,436 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-15T10:00:00.000&productId=35455&brandId=1
+2020-05-12 09:18:04,439 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 3
+    startDate: 2020-06-15T00:00
+    endDate: 2020-06-15T11:00
+    price: 30.50
+}
+2020-05-12 09:18:04,448 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-16T21:00:00.000&productId=35455&brandId=1
+2020-05-12 09:18:04,450 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 4
+    startDate: 2020-06-15T16:00
+    endDate: 2020-12-31T23:59:59
+    price: 38.95
+}
+2020-05-12 09:18:04,460 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14:00:00.000&productId=35455&brandId=1
+2020-05-12 09:18:04,463 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 : Method parameter 'applicationDate': Failed to convert value of type 'java.lang.String' to required type 'java.time.LocalDateTime'; Failed to convert from type [java.lang.String] to type [@jakarta.validation.constraints.NotNull @io.swagger.v3.oas.annotations.Parameter @jakarta.validation.Valid @org.springframework.web.bind.annotation.RequestParam @org.springframework.format.annotation.DateTimeFormat java.time.LocalDateTime] for value [2020-06-14:00:00.000]
+2020-05-12 09:18:04,463 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 BAD_REQUEST : Bad Request
+2020-05-12 09:18:04,470 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2024-06-14T10:00:00.000&productId=35455&brandId=1
+2020-05-12 09:18:04,473 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 404 NOT_FOUND : No price available.
+2020-05-12 09:18:05,005 INFO c.w.i.p.r.c.PriceController [main] response 200 : Mock for PriceResponseDTO, hashCode: 1829835411
+2020-05-12 09:18:05,037 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-12 09:18:05,040 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-05-12 09:18:05,214 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2020-05-12 09:22:29,078 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.2.Final
+2020-05-12 09:22:29,122 INFO o.s.b.StartupInfoLogger [main] Starting AppRunTests using Java 21.0.6 with PID 53016 (started by robertmallquidiaz in /Users/robertmallquidiaz/Documents/Tools/postulaciones/product-pricing-api/infrastructure)
+2020-05-12 09:22:29,122 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2020-05-12 09:22:29,918 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-12 09:22:29,967 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 41 ms. Found 1 JPA repository interface.
+2020-05-12 09:22:30,486 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-12 09:22:30,530 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.6.11.Final
+2020-05-12 09:22:30,561 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2020-05-12 09:22:30,812 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2020-05-12 09:22:30,836 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2020-05-12 09:22:31,088 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2020-05-12 09:22:31,093 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-05-12 09:22:31,152 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator [main] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2020-05-12 09:22:31,856 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2020-05-12 09:22:31,893 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-12 09:22:32,131 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2020-05-12 09:22:32,893 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-12 09:22:33,581 INFO o.s.b.a.h.H2ConsoleAutoConfiguration$H2ConsoleLogger [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2020-05-12 09:22:33,639 INFO o.s.m.w.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2020-05-12 09:22:33,639 INFO o.s.w.s.FrameworkServlet [main] Initializing Servlet ''
+2020-05-12 09:22:33,645 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 14 endpoints beneath base path '/actuator'
+2020-05-12 09:22:33,662 INFO o.s.w.s.FrameworkServlet [main] Completed initialization in 23 ms
+2020-05-12 09:22:33,716 INFO o.s.b.StartupInfoLogger [main] Started AppRunTests in 5.199 seconds (process running for 6.102)
+2020-05-12 09:22:34,154 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T10:00:00.000&productId=35455
+2020-05-12 09:22:34,176 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 BAD_REQUEST : The required query parameter 'brandId' is missing.
+2020-05-12 09:22:34,254 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T10:00:00.000&productId=35455&brandId=1
+2020-05-12 09:22:34,398 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 1
+    startDate: 2020-06-14T00:00
+    endDate: 2020-12-31T23:59:59
+    price: 35.50
+}
+2020-05-12 09:22:34,437 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T16:00:00.000&productId=35455&brandId=1
+2020-05-12 09:22:34,440 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 2
+    startDate: 2020-06-14T15:00
+    endDate: 2020-06-14T18:30
+    price: 25.45
+}
+2020-05-12 09:22:34,448 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T21:00:00.000&productId=35455&brandId=1
+2020-05-12 09:22:34,450 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 1
+    startDate: 2020-06-14T00:00
+    endDate: 2020-12-31T23:59:59
+    price: 35.50
+}
+2020-05-12 09:22:34,457 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-15T10:00:00.000&productId=35455&brandId=1
+2020-05-12 09:22:34,460 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 3
+    startDate: 2020-06-15T00:00
+    endDate: 2020-06-15T11:00
+    price: 30.50
+}
+2020-05-12 09:22:34,468 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-16T21:00:00.000&productId=35455&brandId=1
+2020-05-12 09:22:34,470 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 4
+    startDate: 2020-06-15T16:00
+    endDate: 2020-12-31T23:59:59
+    price: 38.95
+}
+2020-05-12 09:22:34,478 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14:00:00.000&productId=35455&brandId=1
+2020-05-12 09:22:34,480 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 : Method parameter 'applicationDate': Failed to convert value of type 'java.lang.String' to required type 'java.time.LocalDateTime'; Failed to convert from type [java.lang.String] to type [@jakarta.validation.constraints.NotNull @io.swagger.v3.oas.annotations.Parameter @jakarta.validation.Valid @org.springframework.web.bind.annotation.RequestParam @org.springframework.format.annotation.DateTimeFormat java.time.LocalDateTime] for value [2020-06-14:00:00.000]
+2020-05-12 09:22:34,480 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 BAD_REQUEST : Bad Request
+2020-05-12 09:22:34,487 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2024-06-14T10:00:00.000&productId=35455&brandId=1
+2020-05-12 09:22:34,490 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 404 NOT_FOUND : No price available.
+2020-05-12 09:22:35,014 INFO c.w.i.p.r.c.PriceController [main] response 200 : Mock for PriceResponseDTO, hashCode: 1588999368
+2020-05-12 09:22:35,039 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-12 09:22:35,042 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-05-12 09:22:35,205 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2020-05-12 09:28:50,673 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.2.Final
+2020-05-12 09:28:50,727 INFO o.s.b.StartupInfoLogger [main] Starting AppRunTests using Java 21.0.6 with PID 53647 (started by robertmallquidiaz in /Users/robertmallquidiaz/Documents/Tools/postulaciones/product-pricing-api/infrastructure)
+2020-05-12 09:28:50,728 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2020-05-12 09:28:51,786 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-12 09:28:51,849 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 53 ms. Found 1 JPA repository interface.
+2020-05-12 09:28:52,338 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-12 09:28:52,385 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.6.11.Final
+2020-05-12 09:28:52,410 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2020-05-12 09:28:52,623 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2020-05-12 09:28:52,645 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2020-05-12 09:28:52,864 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2020-05-12 09:28:52,866 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-05-12 09:28:52,927 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator [main] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2020-05-12 09:28:53,606 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2020-05-12 09:28:53,643 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-12 09:28:53,911 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2020-05-12 09:28:55,000 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-12 09:28:55,749 INFO o.s.b.a.h.H2ConsoleAutoConfiguration$H2ConsoleLogger [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2020-05-12 09:28:55,807 INFO o.s.m.w.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2020-05-12 09:28:55,808 INFO o.s.w.s.FrameworkServlet [main] Initializing Servlet ''
+2020-05-12 09:28:55,813 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 14 endpoints beneath base path '/actuator'
+2020-05-12 09:28:55,828 INFO o.s.w.s.FrameworkServlet [main] Completed initialization in 20 ms
+2020-05-12 09:28:55,883 INFO o.s.b.StartupInfoLogger [main] Started AppRunTests in 6.057 seconds (process running for 6.977)
+2020-05-12 09:28:56,336 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T10:00:00.000&productId=35455
+2020-05-12 09:28:56,356 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 BAD_REQUEST : The required query parameter 'brandId' is missing.
+2020-05-12 09:28:56,436 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T10:00:00.000&productId=35455&brandId=1
+2020-05-12 09:28:56,589 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 1
+    startDate: 2020-06-14T00:00
+    endDate: 2020-12-31T23:59:59
+    price: 35.50
+}
+2020-05-12 09:28:56,630 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T16:00:00.000&productId=35455&brandId=1
+2020-05-12 09:28:56,633 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 2
+    startDate: 2020-06-14T15:00
+    endDate: 2020-06-14T18:30
+    price: 25.45
+}
+2020-05-12 09:28:56,640 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T21:00:00.000&productId=35455&brandId=1
+2020-05-12 09:28:56,643 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 1
+    startDate: 2020-06-14T00:00
+    endDate: 2020-12-31T23:59:59
+    price: 35.50
+}
+2020-05-12 09:28:56,650 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-15T10:00:00.000&productId=35455&brandId=1
+2020-05-12 09:28:56,652 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 3
+    startDate: 2020-06-15T00:00
+    endDate: 2020-06-15T11:00
+    price: 30.50
+}
+2020-05-12 09:28:56,658 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-16T21:00:00.000&productId=35455&brandId=1
+2020-05-12 09:28:56,661 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 4
+    startDate: 2020-06-15T16:00
+    endDate: 2020-12-31T23:59:59
+    price: 38.95
+}
+2020-05-12 09:28:56,668 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14:00:00.000&productId=35455&brandId=1
+2020-05-12 09:28:56,672 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 : Method parameter 'applicationDate': Failed to convert value of type 'java.lang.String' to required type 'java.time.LocalDateTime'; Failed to convert from type [java.lang.String] to type [@jakarta.validation.constraints.NotNull @io.swagger.v3.oas.annotations.Parameter @jakarta.validation.Valid @org.springframework.web.bind.annotation.RequestParam @org.springframework.format.annotation.DateTimeFormat java.time.LocalDateTime] for value [2020-06-14:00:00.000]
+2020-05-12 09:28:56,672 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 BAD_REQUEST : Bad Request
+2020-05-12 09:28:56,678 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2024-06-14T10:00:00.000&productId=35455&brandId=1
+2020-05-12 09:28:56,680 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 404 NOT_FOUND : No price available.
+2020-05-12 09:28:57,268 INFO c.w.i.p.r.c.PriceController [main] response 200 : Mock for PriceResponseDTO, hashCode: 748633336
+2020-05-12 09:28:57,303 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-12 09:28:57,306 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-05-12 09:28:57,458 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2020-05-12 10:19:44,714 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.2.Final
+2020-05-12 10:19:44,757 INFO o.s.b.StartupInfoLogger [main] Starting AppRunTests using Java 21.0.7 with PID 15866 (started by robertmallquidiaz in /Users/robertmallquidiaz/Documents/Tools/postulaciones/product-pricing-api/infrastructure)
+2020-05-12 10:19:44,758 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2020-05-12 10:19:45,564 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-12 10:19:45,618 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 46 ms. Found 1 JPA repository interface.
+2020-05-12 10:19:46,134 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-12 10:19:46,197 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.6.11.Final
+2020-05-12 10:19:46,227 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2020-05-12 10:19:46,453 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2020-05-12 10:19:46,481 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2020-05-12 10:19:46,700 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2020-05-12 10:19:46,702 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-05-12 10:19:46,758 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator [main] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2020-05-12 10:19:47,403 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2020-05-12 10:19:47,435 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-12 10:19:47,635 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2020-05-12 10:19:48,416 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-12 10:19:49,108 INFO o.s.b.a.h.H2ConsoleAutoConfiguration$H2ConsoleLogger [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2020-05-12 10:19:49,161 INFO o.s.m.w.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2020-05-12 10:19:49,162 INFO o.s.w.s.FrameworkServlet [main] Initializing Servlet ''
+2020-05-12 10:19:49,168 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 14 endpoints beneath base path '/actuator'
+2020-05-12 10:19:49,182 INFO o.s.w.s.FrameworkServlet [main] Completed initialization in 20 ms
+2020-05-12 10:19:49,241 INFO o.s.b.StartupInfoLogger [main] Started AppRunTests in 5.107 seconds (process running for 5.922)
+2020-05-12 10:19:49,672 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T10:00:00.000&productId=35455
+2020-05-12 10:19:49,695 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 BAD_REQUEST : The required query parameter 'brandId' is missing.
+2020-05-12 10:19:49,774 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T10:00:00.000&productId=35455&brandId=1
+2020-05-12 10:19:49,915 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 1
+    startDate: 2020-06-14T00:00
+    endDate: 2020-12-31T23:59:59
+    price: 35.50
+}
+2020-05-12 10:19:49,950 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T16:00:00.000&productId=35455&brandId=1
+2020-05-12 10:19:49,954 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 2
+    startDate: 2020-06-14T15:00
+    endDate: 2020-06-14T18:30
+    price: 25.45
+}
+2020-05-12 10:19:49,960 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T21:00:00.000&productId=35455&brandId=1
+2020-05-12 10:19:49,963 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 1
+    startDate: 2020-06-14T00:00
+    endDate: 2020-12-31T23:59:59
+    price: 35.50
+}
+2020-05-12 10:19:49,969 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-15T10:00:00.000&productId=35455&brandId=1
+2020-05-12 10:19:49,972 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 3
+    startDate: 2020-06-15T00:00
+    endDate: 2020-06-15T11:00
+    price: 30.50
+}
+2020-05-12 10:19:49,979 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-16T21:00:00.000&productId=35455&brandId=1
+2020-05-12 10:19:49,981 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 4
+    startDate: 2020-06-15T16:00
+    endDate: 2020-12-31T23:59:59
+    price: 38.95
+}
+2020-05-12 10:19:49,988 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14:00:00.000&productId=35455&brandId=1
+2020-05-12 10:19:49,991 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 : Method parameter 'applicationDate': Failed to convert value of type 'java.lang.String' to required type 'java.time.LocalDateTime'; Failed to convert from type [java.lang.String] to type [@jakarta.validation.constraints.NotNull @io.swagger.v3.oas.annotations.Parameter @jakarta.validation.Valid @org.springframework.web.bind.annotation.RequestParam @org.springframework.format.annotation.DateTimeFormat java.time.LocalDateTime] for value [2020-06-14:00:00.000]
+2020-05-12 10:19:49,991 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 BAD_REQUEST : Bad Request
+2020-05-12 10:19:49,998 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2024-06-14T10:00:00.000&productId=35455&brandId=1
+2020-05-12 10:19:50,001 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 404 NOT_FOUND : No price available.
+2020-05-12 10:19:50,542 INFO c.w.i.p.r.c.PriceController [main] response 200 : Mock for PriceResponseDTO, hashCode: 694342250
+2020-05-12 10:19:50,572 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-12 10:19:50,575 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-05-12 10:19:50,755 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2020-05-12 10:22:05,474 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.2.Final
+2020-05-12 10:22:05,515 INFO o.s.b.StartupInfoLogger [main] Starting AppRunTests using Java 21.0.7 with PID 17096 (started by robertmallquidiaz in /Users/robertmallquidiaz/Documents/Tools/postulaciones/product-pricing-api/infrastructure)
+2020-05-12 10:22:05,516 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2020-05-12 10:22:06,261 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-12 10:22:06,307 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 39 ms. Found 1 JPA repository interface.
+2020-05-12 10:22:06,799 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-12 10:22:06,850 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.6.11.Final
+2020-05-12 10:22:06,877 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2020-05-12 10:22:07,085 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2020-05-12 10:22:07,113 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2020-05-12 10:22:07,336 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2020-05-12 10:22:07,337 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-05-12 10:22:07,392 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator [main] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2020-05-12 10:22:08,165 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2020-05-12 10:22:08,204 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-12 10:22:08,439 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2020-05-12 10:22:09,213 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-12 10:22:09,871 INFO o.s.b.a.h.H2ConsoleAutoConfiguration$H2ConsoleLogger [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2020-05-12 10:22:09,933 INFO o.s.m.w.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2020-05-12 10:22:09,934 INFO o.s.w.s.FrameworkServlet [main] Initializing Servlet ''
+2020-05-12 10:22:09,940 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 14 endpoints beneath base path '/actuator'
+2020-05-12 10:22:09,956 INFO o.s.w.s.FrameworkServlet [main] Completed initialization in 22 ms
+2020-05-12 10:22:10,010 INFO o.s.b.StartupInfoLogger [main] Started AppRunTests in 5.079 seconds (process running for 5.919)
+2020-05-12 10:22:10,478 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T10:00:00.000&productId=35455
+2020-05-12 10:22:10,497 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 BAD_REQUEST : The required query parameter 'brandId' is missing.
+2020-05-12 10:22:10,562 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T10:00:00.000&productId=35455&brandId=1
+2020-05-12 10:22:10,686 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 1
+    startDate: 2020-06-14T00:00
+    endDate: 2020-12-31T23:59:59
+    price: 35.50
+}
+2020-05-12 10:22:10,719 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T16:00:00.000&productId=35455&brandId=1
+2020-05-12 10:22:10,722 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 2
+    startDate: 2020-06-14T15:00
+    endDate: 2020-06-14T18:30
+    price: 25.45
+}
+2020-05-12 10:22:10,729 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T21:00:00.000&productId=35455&brandId=1
+2020-05-12 10:22:10,731 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 1
+    startDate: 2020-06-14T00:00
+    endDate: 2020-12-31T23:59:59
+    price: 35.50
+}
+2020-05-12 10:22:10,739 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-15T10:00:00.000&productId=35455&brandId=1
+2020-05-12 10:22:10,741 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 3
+    startDate: 2020-06-15T00:00
+    endDate: 2020-06-15T11:00
+    price: 30.50
+}
+2020-05-12 10:22:10,748 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-16T21:00:00.000&productId=35455&brandId=1
+2020-05-12 10:22:10,750 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 4
+    startDate: 2020-06-15T16:00
+    endDate: 2020-12-31T23:59:59
+    price: 38.95
+}
+2020-05-12 10:22:10,757 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14:00:00.000&productId=35455&brandId=1
+2020-05-12 10:22:10,760 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 : Method parameter 'applicationDate': Failed to convert value of type 'java.lang.String' to required type 'java.time.LocalDateTime'; Failed to convert from type [java.lang.String] to type [@jakarta.validation.constraints.NotNull @io.swagger.v3.oas.annotations.Parameter @jakarta.validation.Valid @org.springframework.web.bind.annotation.RequestParam @org.springframework.format.annotation.DateTimeFormat java.time.LocalDateTime] for value [2020-06-14:00:00.000]
+2020-05-12 10:22:10,760 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 BAD_REQUEST : Bad Request
+2020-05-12 10:22:10,766 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2024-06-14T10:00:00.000&productId=35455&brandId=1
+2020-05-12 10:22:10,768 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 404 NOT_FOUND : No price available.
+2020-05-12 10:22:11,261 INFO c.w.i.p.r.c.PriceController [main] response 200 : Mock for PriceResponseDTO, hashCode: 374012527
+2020-05-12 10:22:11,284 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-12 10:22:11,286 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-05-12 10:22:11,462 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2020-05-12 10:32:20,434 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.2.Final
+2020-05-12 10:32:20,476 INFO o.s.b.StartupInfoLogger [main] Starting AppRunTests using Java 21.0.6 with PID 22098 (started by robertmallquidiaz in /Users/robertmallquidiaz/Documents/Tools/product-pricing-api/infrastructure)
+2020-05-12 10:32:20,477 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2020-05-12 10:32:21,234 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-12 10:32:21,284 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 43 ms. Found 1 JPA repository interface.
+2020-05-12 10:32:21,748 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-12 10:32:21,791 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.6.11.Final
+2020-05-12 10:32:21,817 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2020-05-12 10:32:22,042 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2020-05-12 10:32:22,068 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2020-05-12 10:32:22,293 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2020-05-12 10:32:22,295 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-05-12 10:32:22,381 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator [main] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2020-05-12 10:32:23,080 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2020-05-12 10:32:23,119 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-12 10:32:23,345 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2020-05-12 10:32:24,134 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-12 10:32:24,788 INFO o.s.b.a.h.H2ConsoleAutoConfiguration$H2ConsoleLogger [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2020-05-12 10:32:24,836 INFO o.s.m.w.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2020-05-12 10:32:24,837 INFO o.s.w.s.FrameworkServlet [main] Initializing Servlet ''
+2020-05-12 10:32:24,842 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 14 endpoints beneath base path '/actuator'
+2020-05-12 10:32:24,856 INFO o.s.w.s.FrameworkServlet [main] Completed initialization in 19 ms
+2020-05-12 10:32:24,909 INFO o.s.b.StartupInfoLogger [main] Started AppRunTests in 5.0 seconds (process running for 5.836)
+2020-05-12 10:32:25,394 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T10:00:00.000&productId=35455
+2020-05-12 10:32:25,416 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 BAD_REQUEST : The required query parameter 'brandId' is missing.
+2020-05-12 10:32:25,496 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T10:00:00.000&productId=35455&brandId=1
+2020-05-12 10:32:25,638 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 1
+    startDate: 2020-06-14T00:00
+    endDate: 2020-12-31T23:59:59
+    price: 35.50
+}
+2020-05-12 10:32:25,676 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T16:00:00.000&productId=35455&brandId=1
+2020-05-12 10:32:25,680 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 2
+    startDate: 2020-06-14T15:00
+    endDate: 2020-06-14T18:30
+    price: 25.45
+}
+2020-05-12 10:32:25,688 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T21:00:00.000&productId=35455&brandId=1
+2020-05-12 10:32:25,690 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 1
+    startDate: 2020-06-14T00:00
+    endDate: 2020-12-31T23:59:59
+    price: 35.50
+}
+2020-05-12 10:32:25,698 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-15T10:00:00.000&productId=35455&brandId=1
+2020-05-12 10:32:25,701 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 3
+    startDate: 2020-06-15T00:00
+    endDate: 2020-06-15T11:00
+    price: 30.50
+}
+2020-05-12 10:32:25,707 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-16T21:00:00.000&productId=35455&brandId=1
+2020-05-12 10:32:25,710 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 4
+    startDate: 2020-06-15T16:00
+    endDate: 2020-12-31T23:59:59
+    price: 38.95
+}
+2020-05-12 10:32:25,718 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14:00:00.000&productId=35455&brandId=1
+2020-05-12 10:32:25,720 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 : Method parameter 'applicationDate': Failed to convert value of type 'java.lang.String' to required type 'java.time.LocalDateTime'; Failed to convert from type [java.lang.String] to type [@jakarta.validation.constraints.NotNull @io.swagger.v3.oas.annotations.Parameter @jakarta.validation.Valid @org.springframework.web.bind.annotation.RequestParam @org.springframework.format.annotation.DateTimeFormat java.time.LocalDateTime] for value [2020-06-14:00:00.000]
+2020-05-12 10:32:25,720 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 BAD_REQUEST : Bad Request
+2020-05-12 10:32:25,727 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2024-06-14T10:00:00.000&productId=35455&brandId=1
+2020-05-12 10:32:25,729 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 404 NOT_FOUND : No price available.
+2020-05-12 10:32:26,260 INFO c.w.i.p.r.c.PriceController [main] response 200 : Mock for PriceResponseDTO, hashCode: 1588588346
+2020-05-12 10:32:26,287 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-12 10:32:26,289 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-05-12 10:32:26,484 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2020-05-12 10:36:42,849 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.2.Final
+2020-05-12 10:36:42,890 INFO o.s.b.StartupInfoLogger [main] Starting AppRunTests using Java 21.0.7 with PID 24621 (started by robertmallquidiaz in /Users/robertmallquidiaz/Documents/Tools/product-pricing-api/infrastructure)
+2020-05-12 10:36:42,891 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2020-05-12 10:36:43,916 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-12 10:36:43,967 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 43 ms. Found 1 JPA repository interface.
+2020-05-12 10:36:44,466 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-12 10:36:44,511 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.6.11.Final
+2020-05-12 10:36:44,539 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2020-05-12 10:36:44,754 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2020-05-12 10:36:44,777 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2020-05-12 10:36:45,002 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2020-05-12 10:36:45,004 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-05-12 10:36:45,068 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator [main] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2020-05-12 10:36:45,832 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2020-05-12 10:36:45,875 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-12 10:36:46,128 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2020-05-12 10:36:46,937 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-12 10:36:47,649 INFO o.s.b.a.h.H2ConsoleAutoConfiguration$H2ConsoleLogger [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2020-05-12 10:36:47,703 INFO o.s.m.w.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2020-05-12 10:36:47,703 INFO o.s.w.s.FrameworkServlet [main] Initializing Servlet ''
+2020-05-12 10:36:47,708 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 14 endpoints beneath base path '/actuator'
+2020-05-12 10:36:47,723 INFO o.s.w.s.FrameworkServlet [main] Completed initialization in 20 ms
+2020-05-12 10:36:47,781 INFO o.s.b.StartupInfoLogger [main] Started AppRunTests in 5.469 seconds (process running for 6.515)
+2020-05-12 10:36:48,219 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T10:00:00.000&productId=35455
+2020-05-12 10:36:48,249 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 BAD_REQUEST : The required query parameter 'brandId' is missing.
+2020-05-12 10:36:48,344 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T10:00:00.000&productId=35455&brandId=1
+2020-05-12 10:36:48,526 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 1
+    startDate: 2020-06-14T00:00
+    endDate: 2020-12-31T23:59:59
+    price: 35.50
+}
+2020-05-12 10:36:48,584 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T16:00:00.000&productId=35455&brandId=1
+2020-05-12 10:36:48,587 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 2
+    startDate: 2020-06-14T15:00
+    endDate: 2020-06-14T18:30
+    price: 25.45
+}
+2020-05-12 10:36:48,598 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T21:00:00.000&productId=35455&brandId=1
+2020-05-12 10:36:48,601 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 1
+    startDate: 2020-06-14T00:00
+    endDate: 2020-12-31T23:59:59
+    price: 35.50
+}
+2020-05-12 10:36:48,610 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-15T10:00:00.000&productId=35455&brandId=1
+2020-05-12 10:36:48,613 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 3
+    startDate: 2020-06-15T00:00
+    endDate: 2020-06-15T11:00
+    price: 30.50
+}
+2020-05-12 10:36:48,621 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-16T21:00:00.000&productId=35455&brandId=1
+2020-05-12 10:36:48,623 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 4
+    startDate: 2020-06-15T16:00
+    endDate: 2020-12-31T23:59:59
+    price: 38.95
+}
+2020-05-12 10:36:48,630 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14:00:00.000&productId=35455&brandId=1
+2020-05-12 10:36:48,633 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 : Method parameter 'applicationDate': Failed to convert value of type 'java.lang.String' to required type 'java.time.LocalDateTime'; Failed to convert from type [java.lang.String] to type [@jakarta.validation.constraints.NotNull @io.swagger.v3.oas.annotations.Parameter @jakarta.validation.Valid @org.springframework.web.bind.annotation.RequestParam @org.springframework.format.annotation.DateTimeFormat java.time.LocalDateTime] for value [2020-06-14:00:00.000]
+2020-05-12 10:36:48,633 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 BAD_REQUEST : Bad Request
+2020-05-12 10:36:48,640 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2024-06-14T10:00:00.000&productId=35455&brandId=1
+2020-05-12 10:36:48,643 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 404 NOT_FOUND : No price available.
+2020-05-12 10:36:49,181 INFO c.w.i.p.r.c.PriceController [main] response 200 : Mock for PriceResponseDTO, hashCode: 2105947950
+2020-05-12 10:36:49,210 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-12 10:36:49,212 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-05-12 10:36:49,374 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2025-05-12 10:44:45,504 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.2.Final
+2025-05-12 10:44:45,546 INFO o.s.b.StartupInfoLogger [main] Starting AppRunTests using Java 21.0.7 with PID 28330 (started by robertmallquidiaz in /Users/robertmallquidiaz/Documents/Tools/product-pricing-api/infrastructure)
+2025-05-12 10:44:45,547 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2025-05-12 10:44:46,324 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-12 10:44:46,377 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 45 ms. Found 1 JPA repository interface.
+2025-05-12 10:44:46,907 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-12 10:44:46,967 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-05-12 10:44:47,001 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2025-05-12 10:44:47,222 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-12 10:44:47,251 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-05-12 10:44:47,479 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-05-12 10:44:47,481 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-05-12 10:44:47,538 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator [main] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-12 10:44:48,246 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-12 10:44:48,288 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12 10:44:48,538 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-12 10:44:49,360 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-12 10:44:50,029 INFO o.s.b.a.h.H2ConsoleAutoConfiguration$H2ConsoleLogger [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-05-12 10:44:50,081 INFO o.s.m.w.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2025-05-12 10:44:50,082 INFO o.s.w.s.FrameworkServlet [main] Initializing Servlet ''
+2025-05-12 10:44:50,088 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 14 endpoints beneath base path '/actuator'
+2025-05-12 10:44:50,104 INFO o.s.w.s.FrameworkServlet [main] Completed initialization in 22 ms
+2025-05-12 10:44:50,163 INFO o.s.b.StartupInfoLogger [main] Started AppRunTests in 5.224 seconds (process running for 6.065)
+2025-05-12 10:44:50,584 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T10:00:00.000&productId=35455
+2025-05-12 10:44:50,608 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 BAD_REQUEST : The required query parameter 'brandId' is missing.
+2025-05-12 10:44:50,681 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T10:00:00.000&productId=35455&brandId=1
+2025-05-12 10:44:50,818 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 1
+    startDate: 2020-06-14T00:00
+    endDate: 2020-12-31T23:59:59
+    price: 35.50
+}
+2025-05-12 10:44:50,855 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T16:00:00.000&productId=35455&brandId=1
+2025-05-12 10:44:50,857 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 2
+    startDate: 2020-06-14T15:00
+    endDate: 2020-06-14T18:30
+    price: 25.45
+}
+2025-05-12 10:44:50,864 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T21:00:00.000&productId=35455&brandId=1
+2025-05-12 10:44:50,867 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 1
+    startDate: 2020-06-14T00:00
+    endDate: 2020-12-31T23:59:59
+    price: 35.50
+}
+2025-05-12 10:44:50,875 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-15T10:00:00.000&productId=35455&brandId=1
+2025-05-12 10:44:50,877 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 3
+    startDate: 2020-06-15T00:00
+    endDate: 2020-06-15T11:00
+    price: 30.50
+}
+2025-05-12 10:44:50,884 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-16T21:00:00.000&productId=35455&brandId=1
+2025-05-12 10:44:50,887 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 4
+    startDate: 2020-06-15T16:00
+    endDate: 2020-12-31T23:59:59
+    price: 38.95
+}
+2025-05-12 10:44:50,895 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14:00:00.000&productId=35455&brandId=1
+2025-05-12 10:44:50,898 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 : Method parameter 'applicationDate': Failed to convert value of type 'java.lang.String' to required type 'java.time.LocalDateTime'; Failed to convert from type [java.lang.String] to type [@jakarta.validation.constraints.NotNull @io.swagger.v3.oas.annotations.Parameter @jakarta.validation.Valid @org.springframework.web.bind.annotation.RequestParam @org.springframework.format.annotation.DateTimeFormat java.time.LocalDateTime] for value [2020-06-14:00:00.000]
+2025-05-12 10:44:50,898 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 BAD_REQUEST : Bad Request
+2025-05-12 10:44:50,905 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2024-06-14T10:00:00.000&productId=35455&brandId=1
+2025-05-12 10:44:50,907 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 404 NOT_FOUND : No price available.
+2025-05-12 10:44:51,435 INFO c.w.i.p.r.c.PriceController [main] response 200 : Mock for PriceResponseDTO, hashCode: 628170168
+2025-05-12 10:44:51,461 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12 10:44:51,463 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2025-05-12 10:44:51,635 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2025-05-12 10:46:54,160 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.2.Final
+2025-05-12 10:46:54,235 INFO o.s.b.StartupInfoLogger [main] Starting AppRunTests using Java 21.0.7 with PID 29668 (started by robertmallquidiaz in /Users/robertmallquidiaz/Documents/Tools/product-pricing-api/infrastructure)
+2025-05-12 10:46:54,236 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2025-05-12 10:46:55,800 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-12 10:46:55,890 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 70 ms. Found 1 JPA repository interface.
+2025-05-12 10:46:56,618 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-12 10:46:56,685 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-05-12 10:46:56,731 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2025-05-12 10:46:57,038 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-12 10:46:57,073 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-05-12 10:46:57,376 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-05-12 10:46:57,378 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-05-12 10:46:57,453 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator [main] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-12 10:46:58,475 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-12 10:46:58,543 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12 10:46:58,877 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-12 10:47:00,061 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-12 10:47:01,142 INFO o.s.b.a.h.H2ConsoleAutoConfiguration$H2ConsoleLogger [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-05-12 10:47:01,211 INFO o.s.m.w.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2025-05-12 10:47:01,212 INFO o.s.w.s.FrameworkServlet [main] Initializing Servlet ''
+2025-05-12 10:47:01,219 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 14 endpoints beneath base path '/actuator'
+2025-05-12 10:47:01,239 INFO o.s.w.s.FrameworkServlet [main] Completed initialization in 27 ms
+2025-05-12 10:47:01,318 INFO o.s.b.StartupInfoLogger [main] Started AppRunTests in 8.121 seconds (process running for 10.051)
+2025-05-12 10:47:01,899 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T10:00:00.000&productId=35455
+2025-05-12 10:47:01,929 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 BAD_REQUEST : The required query parameter 'brandId' is missing.
+2025-05-12 10:47:02,045 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T10:00:00.000&productId=35455&brandId=1
+2025-05-12 10:47:02,256 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 1
+    startDate: 2020-06-14T00:00
+    endDate: 2020-12-31T23:59:59
+    price: 35.50
+}
+2025-05-12 10:47:02,304 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T16:00:00.000&productId=35455&brandId=1
+2025-05-12 10:47:02,308 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 2
+    startDate: 2020-06-14T15:00
+    endDate: 2020-06-14T18:30
+    price: 25.45
+}
+2025-05-12 10:47:02,317 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T21:00:00.000&productId=35455&brandId=1
+2025-05-12 10:47:02,320 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 1
+    startDate: 2020-06-14T00:00
+    endDate: 2020-12-31T23:59:59
+    price: 35.50
+}
+2025-05-12 10:47:02,327 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-15T10:00:00.000&productId=35455&brandId=1
+2025-05-12 10:47:02,330 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 3
+    startDate: 2020-06-15T00:00
+    endDate: 2020-06-15T11:00
+    price: 30.50
+}
+2025-05-12 10:47:02,338 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-16T21:00:00.000&productId=35455&brandId=1
+2025-05-12 10:47:02,340 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 4
+    startDate: 2020-06-15T16:00
+    endDate: 2020-12-31T23:59:59
+    price: 38.95
+}
+2025-05-12 10:47:02,348 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14:00:00.000&productId=35455&brandId=1
+2025-05-12 10:47:02,353 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 : Method parameter 'applicationDate': Failed to convert value of type 'java.lang.String' to required type 'java.time.LocalDateTime'; Failed to convert from type [java.lang.String] to type [@jakarta.validation.constraints.NotNull @io.swagger.v3.oas.annotations.Parameter @jakarta.validation.Valid @org.springframework.web.bind.annotation.RequestParam @org.springframework.format.annotation.DateTimeFormat java.time.LocalDateTime] for value [2020-06-14:00:00.000]
+2025-05-12 10:47:02,353 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 BAD_REQUEST : Bad Request
+2025-05-12 10:47:02,363 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2024-06-14T10:00:00.000&productId=35455&brandId=1
+2025-05-12 10:47:02,366 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 404 NOT_FOUND : No price available.
+2025-05-12 10:47:03,028 INFO c.w.i.p.r.c.PriceController [main] response 200 : Mock for PriceResponseDTO, hashCode: 1534036773
+2025-05-12 10:47:03,073 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12 10:47:03,077 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2025-05-12 10:47:03,261 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2025-05-12 10:54:32,154 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.2.Final
+2025-05-12 10:54:32,187 INFO o.s.b.StartupInfoLogger [main] Starting AppRunTests using Java 21.0.6 with PID 33244 (started by robertmallquidiaz in /Users/robertmallquidiaz/Documents/Tools/product-pricing-api/infrastructure)
+2025-05-12 10:54:32,188 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2025-05-12 10:54:32,807 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-12 10:54:32,852 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 39 ms. Found 1 JPA repository interface.
+2025-05-12 10:54:33,238 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-12 10:54:33,289 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-05-12 10:54:33,312 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2025-05-12 10:54:33,500 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-12 10:54:33,518 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-05-12 10:54:33,622 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-05-12 10:54:33,623 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-05-12 10:54:33,662 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator [main] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-12 10:54:34,182 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-12 10:54:34,210 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12 10:54:34,362 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-12 10:54:34,872 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-12 10:54:35,377 INFO o.s.b.a.h.H2ConsoleAutoConfiguration$H2ConsoleLogger [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-05-12 10:54:35,411 INFO o.s.m.w.MockServletContext [main] Initializing Spring TestDispatcherServlet ''
+2025-05-12 10:54:35,411 INFO o.s.w.s.FrameworkServlet [main] Initializing Servlet ''
+2025-05-12 10:54:35,415 INFO o.s.b.a.e.w.EndpointLinksResolver [main] Exposing 14 endpoints beneath base path '/actuator'
+2025-05-12 10:54:35,426 INFO o.s.w.s.FrameworkServlet [main] Completed initialization in 15 ms
+2025-05-12 10:54:35,486 INFO o.s.b.StartupInfoLogger [main] Started AppRunTests in 3.664 seconds (process running for 4.489)
+2025-05-12 10:54:35,743 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T10:00:00.000&productId=35455
+2025-05-12 10:54:35,767 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 BAD_REQUEST : The required query parameter 'brandId' is missing.
+2025-05-12 10:54:35,830 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T10:00:00.000&productId=35455&brandId=1
+2025-05-12 10:54:35,913 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 1
+    startDate: 2020-06-14T00:00
+    endDate: 2020-12-31T23:59:59
+    price: 35.50
+}
+2025-05-12 10:54:35,949 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T16:00:00.000&productId=35455&brandId=1
+2025-05-12 10:54:35,951 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 2
+    startDate: 2020-06-14T15:00
+    endDate: 2020-06-14T18:30
+    price: 25.45
+}
+2025-05-12 10:54:35,957 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14T21:00:00.000&productId=35455&brandId=1
+2025-05-12 10:54:35,959 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 1
+    startDate: 2020-06-14T00:00
+    endDate: 2020-12-31T23:59:59
+    price: 35.50
+}
+2025-05-12 10:54:35,964 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-15T10:00:00.000&productId=35455&brandId=1
+2025-05-12 10:54:35,967 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 3
+    startDate: 2020-06-15T00:00
+    endDate: 2020-06-15T11:00
+    price: 30.50
+}
+2025-05-12 10:54:35,973 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-16T21:00:00.000&productId=35455&brandId=1
+2025-05-12 10:54:35,976 INFO c.w.i.p.r.c.PriceController [main] response 200 : class PriceResponseDTO {
+    productId: 35455
+    brandId: 1
+    priceList: 4
+    startDate: 2020-06-15T16:00
+    endDate: 2020-12-31T23:59:59
+    price: 38.95
+}
+2025-05-12 10:54:35,983 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2020-06-14:00:00.000&productId=35455&brandId=1
+2025-05-12 10:54:35,986 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 : Method parameter 'applicationDate': Failed to convert value of type 'java.lang.String' to required type 'java.time.LocalDateTime'; Failed to convert from type [java.lang.String] to type [@jakarta.validation.constraints.NotNull @io.swagger.v3.oas.annotations.Parameter @jakarta.validation.Valid @org.springframework.web.bind.annotation.RequestParam @org.springframework.format.annotation.DateTimeFormat java.time.LocalDateTime] for value [2020-06-14:00:00.000]
+2025-05-12 10:54:35,986 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 400 BAD_REQUEST : Bad Request
+2025-05-12 10:54:35,991 INFO c.w.i.p.i.RequestResponseLoggingInterceptor [main] Request : http://localhost/prices?applicationDate=2024-06-14T10:00:00.000&productId=35455&brandId=1
+2025-05-12 10:54:35,994 ERROR c.w.i.p.c.GlobalExceptionHandler [main] exception - 404 NOT_FOUND : No price available.
+2025-05-12 10:54:36,001 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12 10:54:36,003 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2025-05-12 10:54:36,004 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.

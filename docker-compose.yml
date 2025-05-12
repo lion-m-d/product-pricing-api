@@ -1,0 +1,144 @@
+services:
+  influxdb:
+    image: influxdb:1.8.2
+    ports:
+      - "8086:8086"
+    environment:
+      - INFLUXDB_DB=k6
+    networks:
+      - price-network
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./shared/prometheus:/etc/prometheus
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+    networks:
+      - price-network
+
+  grafana:
+    image: grafana/grafana:8.1.2
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_BASIC_ENABLED=false
+    volumes:
+      - ./shared/grafana:/etc/grafana/provisioning
+    networks:
+      - price-network
+  k6:
+    image: loadimpact/k6:0.28.0
+    ports:
+      - "6565:6565"
+    volumes:
+      - ./shared/k6:/scripts
+    environment:
+      - K6_OUT=influxdb=http://influxdb:8086/k6
+    networks:
+      - price-network
+
+  product-pricing-api:
+    build:
+      context: .
+    image: product-pricing-api:latest
+    ports:
+      - "8080:8080"
+    container_name: product-pricing-api-container
+    environment:
+      SONAR_LOGIN: admin
+      SONAR_PASSWORD: admin
+    volumes:
+      - ./h2-data:/data
+    networks:
+      - price-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      - logstash
+
+  postgres:
+    image: postgres:15
+    container_name: sonar-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: sonar
+      POSTGRES_PASSWORD: sonar
+      POSTGRES_DB: sonarqube
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - price-network
+
+  sonarqube:
+    image: sonarqube:lts-community
+    container_name: sonarqube
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    environment:
+      SONAR_JDBC_URL: jdbc:postgresql://postgres:5432/sonarqube
+      SONAR_JDBC_USERNAME: sonar
+      SONAR_JDBC_PASSWORD: sonar
+    ports:
+      - "9000:9000"
+    networks:
+      - price-network
+
+  elasticsearch:
+    build: elk/elasticsearch/
+    container_name: elasticsearch
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - xpack.security.transport.ssl.enabled=false
+      - ES_JAVA_OPTS=-Xms1g -Xmx1g
+    networks:
+      - price-network
+
+  logstash:
+    build: elk/logstash/
+    container_name: logstash
+    volumes:
+      - ./elk/logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro,Z
+      - ./elk/logstash/pipeline:/usr/share/logstash/pipeline:ro,Z
+    ports:
+      - 5044:5044
+      - 50000:50000/tcp
+      - 50000:50000/udp
+      - 9600:9600
+    environment:
+      LS_JAVA_OPTS: -Xms256m -Xmx256m
+    networks:
+      - price-network
+    depends_on:
+      - elasticsearch
+
+  kibana:
+    build: elk/kibana/
+    container_name: kibana
+    volumes:
+      - ./elk/kibana/config/:/opt/kibana/config/
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+    networks:
+      - price-network
+
+networks:
+  price-network:
+    driver: bridge
+volumes:
+  postgres_data:
+  elasticsearch:
+
+
+

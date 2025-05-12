@@ -1,0 +1,164 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>product-pricing-api</artifactId>
+        <groupId>com.ws</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <properties>
+        <sonar.coverage.jacoco.xmlReportPaths>${project.basedir}/target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+        <sonar.exclusions>
+            **/com/ws/AppRun.java,
+            **/com/ws/infrastructure/**/config/**,
+            **/com/ws/infrastructure/**/persistence/entity/**,
+            **/com/ws/infrastructure/**/interceptor/**,
+            **/com/ws/infrastructure/**/rest/controller/*Api*
+        </sonar.exclusions>
+    </properties>
+
+
+    <artifactId>infrastructure</artifactId>
+    <packaging>jar</packaging>
+
+    <name>infrastructure</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.ws</groupId>
+            <artifactId>domain</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ws</groupId>
+            <artifactId>application</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.8.5</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>3.4.4</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>com.ws.AppRun</mainClass>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.openapitools</groupId>
+                <artifactId>openapi-generator-maven-plugin</artifactId>
+                <version>6.6.0</version>
+                <executions>
+                    <execution>
+                        <id>price-api</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <inputSpec>${project.basedir}/src/main/resources/open-api/product-pricing-api.yaml</inputSpec>
+                            <generatorName>spring</generatorName>
+                            <modelNameSuffix>DTO</modelNameSuffix>
+                            <skipIfSpecIsUnchanged>false</skipIfSpecIsUnchanged>
+                            <skipOperationExample>true</skipOperationExample>
+                            <generateSupportingFiles>false</generateSupportingFiles>
+                            <apiPackage>com.ws.infrastructure.price.rest.controller</apiPackage>
+                            <modelPackage>com.ws.infrastructure.price.rest.dto</modelPackage>
+                            <typeMappings>
+                                <typeMapping>OffsetDateTime=java.time.LocalDateTime</typeMapping>
+                                <typeMapping>OffsetTime=java.time.LocaLTime</typeMapping>
+                                <typeMapping>OffsetDate=java.time.LocalDate</typeMapping>
+                                <typeMapping>Double=java.math.BigDecimal</typeMapping>
+                            </typeMappings>
+                            <configOptions>
+                                <library>spring-boot</library>
+                                <title>${project.artifactId}</title>
+                                <serializableModel>true</serializableModel>
+                                <openApiNullable>false</openApiNullable>
+                                <async>false</async>
+                                <useTags>true</useTags>
+                                <performBeanValidation>true</performBeanValidation>
+                                <useBeanValidation>true</useBeanValidation>
+                                <oas3>true</oas3>
+                                <dateLibrary>java8</dateLibrary>
+                                <ignoreAnyOfInEnum>true</ignoreAnyOfInEnum>
+                                <useJakartaEe>true</useJakartaEe>
+                                <interfaceOnly>true</interfaceOnly>
+                            </configOptions>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.10</version>
+                <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+
+                    <execution>
+                        <id>report</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+

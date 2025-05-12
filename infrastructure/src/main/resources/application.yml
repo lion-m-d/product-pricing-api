@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: 'product-pricing-api'
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    hikari:
+      maximum-pool-size: 50
+      minimum-idle: 10
+      idle-timeout: 30000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    defer-datasource-initialization: true
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+springdoc:
+  api-docs:
+    version: OPENAPI_3_0
+
+
+server:
+  tomcat:
+    threads:
+      max: 200
+      min-spare: 20
+  port: 8080
+  address: 0.0.0.0
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    health:
+      show-details: always
+
+  endpoint:
+    prometheus:
+      access: read_only
